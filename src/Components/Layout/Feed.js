@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Posts from "../Forms/Records"
+import Post from "../Forms/Record"
 
 export class Feed extends Component {
 
@@ -11,7 +11,7 @@ export class Feed extends Component {
     
         <div className="display">
     
-       <Posts/>
+       <Post/>
         </div>
   
     </div>

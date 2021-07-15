@@ -6,12 +6,8 @@ import Home from "./Components/Layout/Home"
 import Navbar from "./Components/Layout/Navbar/Navbar"
 import Dashboard from "./Components/Layout/Dashboard"
 import Feed from "./Components/Layout/Feed"
-//import Posts from './Components/Forms/Records'
-import PrivateRoute from './Components/Layout/PrivateRoute'
 import {BrowserRouter as Router, Switch,Route} from "react-router-dom";
-import Records from './Components/Forms/Record'
 import Post from './Components/Forms/Record'
-
 class App extends Component {
   
   render() {

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import  { Component } from "react";
 import loginImg from "./register.png";
 import PropTypes from "prop-types"
 import {connect} from "react-redux"

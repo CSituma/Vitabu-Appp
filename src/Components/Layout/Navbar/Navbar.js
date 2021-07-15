@@ -1,5 +1,4 @@
 import React from 'react';
-import * as S from './style';
 import Burger from './Burger';
 import { Link } from 'react-router-dom';
 import Socials from './Socials';

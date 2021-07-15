@@ -1,15 +1,14 @@
-import React, { useState,useEffect} from 'react'
+import { useEffect,useState} from 'react'
 import { useSelector,useDispatch} from 'react-redux';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import "../../style.scss";
 import { TextField } from '@material-ui/core';
-import FileBase from 'react-file-base64';
+//import FileBase from 'react-file-base64';
 import  { addBooks,updateBooks} from "../../Actions/Records"
 import { CircularProgress } from '@material-ui/core';
 
 
-  const PostForm = ({formData,setFormData,currentId,setCurrentId}) => {
+  const PostForm = ({currentId}) => {
   // {auth:{user,isAuthenticated,loading},records:{errors,post},allrecords:{posts},addBooks})
 
 
@@ -38,6 +37,8 @@ import { CircularProgress } from '@material-ui/core';
         marginBottom: 10,
       },
     }));
+
+
     const initialState ={
 
       Title: '',
@@ -46,6 +47,18 @@ import { CircularProgress } from '@material-ui/core';
       Review:'',
      
    }
+   
+   const [formData, setFormData] = useState(initialState);
+
+    const {
+    
+        Title,
+          Author,
+          ISBN,
+          Review,
+          
+       } = formData
+
    const classes = useStyles();
   
   const handleChange = (e) =>{
@@ -74,7 +87,7 @@ console.log(post)
 
 useEffect(() => {
  if(post) setFormData(post)
-}, [post])
+}, [setFormData,post])
 
   
   const submit = (e) => {
@@ -116,7 +129,6 @@ dispatch(updateBooks(id,updatedBooks));
 
 
 const User = JSON.parse(user) 
- const {Author,Title,ISBN,Review} = formData
 
   return (
 

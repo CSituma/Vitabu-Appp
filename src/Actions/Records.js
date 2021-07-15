@@ -1,7 +1,7 @@
 import {PROFILE_ERRORS, SAVE_POST, CLEAR_PROFILE, ACCOUNT_DELETED, UPDATE_POST,POST_ERROR,UPDATE_LIKES,DELETE_POST, GET_POSTS,GET_POST} from "./types" 
 import { setAlert } from './alert';
 import api from '../utils/api';
-import axios from 'axios';
+
 
 
 export const addBooks = (data) =>  dispatch => {

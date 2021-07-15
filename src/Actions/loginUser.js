@@ -1,4 +1,4 @@
-import {GET_ERRORS, LOG_IN,LOGOUT, CURRENT_USER} from "./types"
+import {GET_ERRORS, LOG_IN,LOGOUT} from "./types"
 import axios from "axios"
 import jwt_decode from "jwt-decode"
 import api from '../utils/api';

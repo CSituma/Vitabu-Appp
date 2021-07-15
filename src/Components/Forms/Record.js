@@ -8,9 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import {useDispatch, useSelector} from 'react-redux';
-import PropTypes from 'prop-types';
 import LoginImg from "./register.png"
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt"
 import DeleteIcon from "@material-ui/icons/Delete"
@@ -43,7 +41,7 @@ avatar: {
 });
 
 
-const Post = ({setFormData,currentId,setCurrentId}) => {
+const Post = ({currentId,setCurrentId}) => {
   // {allrecords:{posts},auth:{user,isAuthenticated,loading}}
   const classes = useStyles();
  const dispatch = useDispatch();
