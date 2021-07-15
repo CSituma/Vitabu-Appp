@@ -112,7 +112,7 @@ dispatch(updateBooks(id,updatedBooks));
 
    clear()
 
-   //window.location.reload()
+   window.location.reload()
     
   }
 
