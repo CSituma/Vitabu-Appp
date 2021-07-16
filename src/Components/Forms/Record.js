@@ -45,21 +45,21 @@ const Post = ({currentId,setCurrentId}) => {
   // {allrecords:{posts},auth:{user,isAuthenticated,loading}}
   const classes = useStyles();
  const dispatch = useDispatch();
-const posts = useSelector((state) => state.records.posts)
+
 const user = useSelector((state) => state.auth.user)
-console.log(posts)
+
 
 
 const  isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
 
-
-    
     useEffect(() => {
      dispatch(getBooks());
       },[currentId,dispatch])
 
 
-  //   const [like, setlike] = useState({count:0});
+const posts = useSelector((state) => state.records)
+console.log(posts)
+    //const [like, setlike] = useState({count:0});
 
   // const likebutton = {
 
@@ -67,17 +67,12 @@ const  isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
   // }
   
 
-// const edit = () => {
+const handleChange = () => {
 
-//   setCurrentId(posts)
+  window.location.reload()
 
 
-//   window.scrollTo({
-//     top:0,
-//     left:0,
-//     behavior:"smooth"
-//   })
-// }
+}
 
   const User = JSON.parse(user) 
 
@@ -128,14 +123,20 @@ posts.map((post) => (
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" onClick = {() => dispatch(addLike(post._id))}>
+        <Button size="small" color="primary"
+         onClick = {() => dispatch(addLike(post._id))}>
           <ThumbUpAltIcon /> 
         { post.Likes}
         </Button>
         
-        <Button size="small" color="primary"  onClick = {() => dispatch(deleteBook(post._id))}>
-         <DeleteIcon/>
+
+ <Button size="small" color="primary"
+ onClick = {() => {dispatch(deleteBook(post._id))}}>
+
+  <DeleteIcon />
         </Button>
+
+    
       </CardActions>
    
     </Card>

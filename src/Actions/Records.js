@@ -66,7 +66,7 @@ export const addBooks = (data) =>  dispatch => {
     console.log(error)
     dispatch({
       type:POST_ERROR,
-      payload:error.response.data
+      payload:error.res.data
 
    })})
    } 

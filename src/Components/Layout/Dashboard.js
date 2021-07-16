@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import  { useState} from 'react'
 import { useSelector } from 'react-redux';
 import "../../style.scss";
 import { CircularProgress } from '@material-ui/core';
@@ -8,17 +8,37 @@ import PostForm from '../Forms/postForm';
   const Dashboard = () => {
 
     const  isAuthenticated = useSelector((state) => state.auth.isAuthenticated) 
+
+    const initialState = {
+
+      Title: '',
+      Author: '',
+      ISBN:'',
+      Review:'',
+     
+   }
+   
+   const [formData, setFormData] = useState(initialState);
    const [currentId, setCurrentId] = useState(null);
+  
+   const clear = () => {
+   
+    setFormData({...initialState})
+     setCurrentId(null);
+   //  errors = '';
+  
+ };
+
   return (
     !isAuthenticated? <CircularProgress/> :(
      <div className="posts">
     <div className = "Dashboard">
     
-     <PostForm  currentId={currentId}/>
+     <PostForm formData={formData} setFormData={setFormData} currentId={currentId} clear={clear}/>
   
   
   
-     <Post currentId={currentId} setCurrentId={setCurrentId}/>
+     <Post formData={formData} setFormData={setFormData} currentId={currentId} setCurrentId={setCurrentId}/>
       
 
   </div>
@@ -34,4 +54,3 @@ import PostForm from '../Forms/postForm';
 
 
 export default Dashboard;
-

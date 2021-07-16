@@ -1,14 +1,13 @@
-import { useEffect,useState} from 'react'
+import  { useEffect} from 'react'
 import { useSelector,useDispatch} from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import "../../style.scss";
 import { TextField } from '@material-ui/core';
-//import FileBase from 'react-file-base64';
 import  { addBooks,updateBooks} from "../../Actions/Records"
 import { CircularProgress } from '@material-ui/core';
 
 
-  const PostForm = ({currentId}) => {
+  const PostForm = ({formData,setFormData,currentId,clear}) => {
   // {auth:{user,isAuthenticated,loading},records:{errors,post},allrecords:{posts},addBooks})
 
 
@@ -38,43 +37,16 @@ import { CircularProgress } from '@material-ui/core';
       },
     }));
 
-
-    const initialState ={
-
-      Title: '',
-      Author: '',
-      ISBN:'',
-      Review:'',
-     
-   }
-   
-   const [formData, setFormData] = useState(initialState);
-
-    const {
-    
-        Title,
-          Author,
-          ISBN,
-          Review,
-          
-       } = formData
-
    const classes = useStyles();
-  
+
+
+
   const handleChange = (e) =>{
 
    setFormData({...formData, [e.target.name]:e.target.value})
         
     }
 
-const clear = () => {
-   
-     setFormData({...initialState})
-    //  errors = '';
-   
-  };
-   
-  
    const dispatch = useDispatch();
    const user = useSelector((state) => state.auth.user)   
    const  isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
@@ -82,7 +54,7 @@ const clear = () => {
 
    ////Populatng form wih post data to edit 
    
-   const post = useSelector((state) =>currentId ? state.records.posts.find((p)=>p._id === currentId) : null);
+   const post = useSelector((state) =>currentId ? state.records.find((p)=>p._id === currentId) : null);
 console.log(post)
 
 useEffect(() => {
@@ -96,24 +68,16 @@ useEffect(() => {
 
    if(currentId){
 
-const updatedBooks = {
-  Title: formData.Title,
-  Author: formData.Author,
-  ISBN:formData.ISBN,
-  Review: formData.Review
+dispatch(updateBooks(id,formData));
 
-}
-dispatch(updateBooks(id,updatedBooks));
    }
    else{
   dispatch(addBooks(formData));
 
    }
 
+   
    clear()
-
-   window.location.reload()
-    
   }
 
 
@@ -129,6 +93,7 @@ dispatch(updateBooks(id,updatedBooks));
 
 
 const User = JSON.parse(user) 
+ const {Author,Title,ISBN,Review} = formData
 
   return (
 
@@ -222,24 +187,5 @@ const User = JSON.parse(user)
 }
 
 
-// PostForm.propTypes = {
-//   auth: PropTypes.object,
-//   errors: PropTypes.string
-
-
-
-// };
-
-// const mapStateToProps = state => ({
-//  auth: state.auth,
-//  records:state.records,
-//  allrecords:state.allrecords,
-//  errors:state.records.errors,
-//  post: state.records.post,
-//  posts: state.allrecords.posts
-
-
- 
-// });
 
  export default PostForm

@@ -7,7 +7,7 @@ import {
 
 const initialState = {
   token:localStorage.getItem('token'),
-  isAuthenticated: localStorage.getItem('token')? true :false,
+  isAuthenticated: !localStorage.getItem('token')? false :true ,
   loading:true,
   errors:'',
   user:localStorage.getItem('userss'),

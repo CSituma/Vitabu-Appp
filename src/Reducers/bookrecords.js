@@ -2,71 +2,43 @@ import {POST_ERROR,SAVE_POST,ACCOUNT_DELETED, CLEAR_PROFILE, UPDATE_POST, GET_PO
 
 
 
-const initialState =  {
-
-  post:[],
-  posts:[],
-  errors:'',
-  loading:false,
-
-   
-
-    }
-
-const bookrecords =  (state = initialState, action) => {
+const bookrecords =  (posts=[], action) => {
   switch (action.type) {
 
   case SAVE_POST:
-    return { ...state,
-      post:action.payload,
-   }
-
+ return [...posts, action.payload];
   
    case GET_POSTS:
-    return { ...state,
-      posts:action.payload,
-   }
+  return action.payload;
 
   case UPDATE_POST:
 
- return  state.posts.map((post) => 
+ return  posts.map((post) => 
 
   post._id === action.payload._id ? action.payload : post
  
   );
   case DELETE_POST:
 
- return  state.posts.filter((post) => 
+ return  posts.filter((post) => 
 
   post._id !== action.payload);
 
 
   case UPDATE_LIKES:
 
- return  state.posts.map((post) => 
+ return posts.map((post) => 
 
   post._id === action.payload._id ? action.payload : post
  
   );
 
 
-  case ACCOUNT_DELETED:
-    return { ...state,
-       post:null   
-      }
-  case CLEAR_PROFILE:
-    return { ...state,
-       post:null 
-    
-      }
   case POST_ERROR:
-    return [{ ...state,
-       errors:action.payload,
-       post:null
-    }]
+    return action.payload;
 
   default:
-    return state
+    return posts
   }
 }
 export default bookrecords
