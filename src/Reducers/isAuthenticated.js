@@ -2,7 +2,8 @@ import {
   GET_ERRORS,
   LOG_IN,
   LOGOUT,
-  ACCOUNT_DELETED
+
+  DELETE_USER
 } from "../Actions/types"
 
 const initialState = {
@@ -27,7 +28,7 @@ const isAuthenticated = (state = initialState, action) => {
        
       };
     
-    case ACCOUNT_DELETED:
+    case DELETE_USER:
       return {
         ...state,
         token: null,

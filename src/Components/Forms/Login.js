@@ -1,5 +1,5 @@
 import  { Component } from "react";
-import loginImg from "./register.png";
+import loginImg from  "../Images/register.png"
 import PropTypes from "prop-types"
 import {connect} from "react-redux"
 import LoginUser from "../../Actions/loginUser"

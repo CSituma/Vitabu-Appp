@@ -1,4 +1,4 @@
-import {PROFILE_ERRORS, SAVE_POST, CLEAR_PROFILE, ACCOUNT_DELETED, UPDATE_POST,POST_ERROR,UPDATE_LIKES,DELETE_POST, GET_POSTS,GET_POST} from "./types" 
+import {PROFILE_ERRORS, SAVE_POST, CLEAR_PROFILE, UPDATE_POST,POST_ERROR,UPDATE_LIKES,DELETE_POST, GET_POSTS,GET_USERS_POSTS, DELETE_USER} from "./types" 
 import { setAlert } from './alert';
 import api from '../utils/api';
 
@@ -32,12 +32,34 @@ export const addBooks = (data) =>  dispatch => {
    //Fetching All  Books
 
    export const getBooks = () => dispatch => {
-    api.get('/records')
+    api.get('/records/')
     .then(res => {
       console.log(res.data)
      
       dispatch({
       type:GET_POSTS,
+      payload:res.data
+      })})
+    .catch(error => {  
+      console.log(error)
+      dispatch({
+       type:POST_ERROR,
+     payload:error.response.data
+         })
+   
+     }) };
+
+
+
+   //Fetching Books By User
+
+   export const getBooksByUser = () => dispatch => {
+    api.get('/records/mypost')
+    .then(res => {
+      console.log(res.data)
+     
+      dispatch({
+      type:GET_USERS_POSTS,
       payload:res.data
       })})
     .catch(error => {  
@@ -71,22 +93,22 @@ export const addBooks = (data) =>  dispatch => {
    })})
    } 
    
-  // Fetching one Speific Book 
-export const getBook = id => async dispatch => {
-  try {
-    const res = await api.get(`/records/${id}`);
+//   // Search Book 
+// export const searchBook = searchQuery=> async dispatch => {
+//   try {
+//     const res = await api.get(`/records/search?searchQuery=${searchQuery.search} || 'none`,searchQuery);
 
-    dispatch({
-      type: GET_POST,
-      payload: res.data
-    });
-  } catch (err) {
-    dispatch({
-      type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status }
-    });
-  }
-};
+//     dispatch({
+//       type: SEARCH_POSTS,
+//       payload: res.data
+//     });
+//   } catch (err) {
+//     dispatch({
+//       type: POST_ERROR,
+//       payload: { msg: err.response.statusText, status: err.response.status }
+//     });
+//   }
+// };
 
 
 // Delete Book
@@ -107,6 +129,9 @@ export const deleteBook = id => async dispatch => {
     });
   }
 };
+
+
+
 
 
 // Add/Update Likes
@@ -162,14 +187,14 @@ return({
 }
 
 ///Deleete Account
-export const deleteaccount = () => dispatch =>{
-if(window.confirm ('Are you sure?This CANT BE undone!')){
+export const deleteUser = () => dispatch =>{
+if(window.confirm ('Are you sure?This Cannot be undone!')){
 
-  api.delete('/records')
+  api.delete('/login/delete')
   .then(res => {
     console.log(res.data)
      dispatch({
-        type:ACCOUNT_DELETED,
+        type: DELETE_USER,
         payload:{}
 
      })})
@@ -184,4 +209,5 @@ if(window.confirm ('Are you sure?This CANT BE undone!')){
      })
   }
 }
+
 

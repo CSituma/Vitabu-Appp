@@ -1,31 +1,24 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
+
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { alpha, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 
+
+
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor:'white',
-  },
-  title: {
-    flexGrow: 1,
-    display: 'none',
-    color: 'black',
-    fontWeight:'bold',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
+
+  div :{
+    float:'right',
+  marginTop:10,
+   backgroundColor:'none',
   },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.black, 0.15),
+    backgroundColor: alpha(theme.palette.common.white, 1),
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.black, 0.25),
+      backgroundColor: alpha(theme.palette.common.white, 0.5),
     },
     marginLeft: 0,
     color:'black',
@@ -62,22 +55,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SearchAppBar() {
+export default function SearchAppBar({search,setSearch}) {
   const classes = useStyles();
 
+
+  const handleChange = (e) =>{
+
+    setSearch(e.target.value)
+         
+     }
+
+
   return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.root} >
+  <div className={classes.div}>
+  
         <Toolbar>
-          <Typography className={classes.title} variant="h6" noWrap>
-            SEARCH LIBRARY
-          </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Search Library….."
+              onChange={handleChange}
+              value={search}
+              name="search"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -86,7 +87,7 @@ export default function SearchAppBar() {
             />
           </div>
         </Toolbar>
-      </AppBar>
+     
     </div>
   );
 }

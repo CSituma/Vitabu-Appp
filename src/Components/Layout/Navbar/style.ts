@@ -41,20 +41,20 @@ export const StyledBurger = styled.div<INav>`
   }
 `
 
-// export const Nav = styled.nav`
-//   height: 60px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   position: relative;
-//   background: rgba(0, 0, 0, 0.811);
-//   padding: 0.5rem 1.4em;
+export const Nav = styled.nav`
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: rgba(0, 0, 0, 0.811);
+  padding: 0.5rem 1.4em;
 
-//   @media (max-width: 678px) {
-//     width: 100vw;
-//   }
+  @media (max-width: 678px) {
+    width: 100vw;
+  }
 
-// `
+`
 
 export const Ul = styled.ul<INav>`
   list-style: none;
@@ -71,26 +71,15 @@ export const Ul = styled.ul<INav>`
   margin-left: 20px;
 
   a {
-    text-decoration: none;
-    text-transform: none;
-    color: white;
     cursor: pointer;
-
-    &:nth-child(2) {
-      color:yellow;
-      &:active,&:focus{
-    color: cadetblue;
-  }
-    }
 
     &:hover {
       color: yellow;
-    &:nth-child(2) {
+    &:nth-child(3) {
       color:black;
       transition: all 0.2s ease-in-out;
     background: #fff;
     }
-
 
     } 
     

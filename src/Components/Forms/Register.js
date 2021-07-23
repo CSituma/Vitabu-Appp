@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import  { Component } from "react";
 import {Link} from "react-router-dom"
-import regImg from "./register.png"
+import regImg from "../Images/register.png"
 import {TextField} from "@material-ui/core"
 import "../../style.scss";
 import api from '../../utils/api';
@@ -23,7 +23,7 @@ handleChange = (e) =>{
 
   this.setState({[e.target.name]:e.target.value})
  
- 
+
   }
 
    validatefields = () =>{

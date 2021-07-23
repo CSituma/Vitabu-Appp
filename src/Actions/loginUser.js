@@ -88,12 +88,11 @@ export const logout = () =>dispatch =>{
 
     localStorage.removeItem('token');
     localStorage.removeItem('userss');
-    localStorage.removeItem('postss');
+
        dispatch({
        type: LOGOUT
       })
+    }
 
-
-} 
 
 export default LoginUser

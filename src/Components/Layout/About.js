@@ -1,7 +1,8 @@
 
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Footer from "./Footer";
 
 export default function About() {
 
@@ -98,11 +99,7 @@ export default function About() {
               
 
 </div>
-<div className = "ffooter">
-<div>@copyright Vitabu 2020</div>
-<div> Build by Clara Situma</div>
-<div>Nairobi,Kenya</div>
-</div>
+<Footer/>
     </div>
   )
 }

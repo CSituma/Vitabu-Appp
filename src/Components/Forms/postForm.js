@@ -1,10 +1,11 @@
-import  { useEffect} from 'react'
+import  { useEffect,useState} from 'react'
 import { useSelector,useDispatch} from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import "../../style.scss";
+
 import { TextField } from '@material-ui/core';
 import  { addBooks,updateBooks} from "../../Actions/Records"
-import { CircularProgress } from '@material-ui/core';
+
 
 
   const PostForm = ({formData,setFormData,currentId,clear}) => {
@@ -46,26 +47,114 @@ import { CircularProgress } from '@material-ui/core';
    setFormData({...formData, [e.target.name]:e.target.value})
         
     }
+    const {Author,Title,ISBN,Review} = formData
 
+     //////Validation
+const [errors, setErrors] = useState({
+ 
+  TitleError:'', 
+  AuthorError:'', 
+ ISBNError:'', 
+
+
+})
+
+const validatefields = () =>{
+  let errors = {}
+  let isError = false
+
+  if (!Title.trim()) {
+      isError = true;
+      errors.Title= 'Title field is empty';
+  }
+  else if (!ISBN.trim()) {
+      isError = true;
+      errors.ISBN= 'Provide an ISBN Number to identify your book(Only you can see it)';
+  }
+  else if (!Author.trim()) {
+      isError = true;
+      errors.Author= 'Who wrote the book?';
+  }
+   else if (!/^[A-Za-z]+/.test(Title)) {
+     isError = true;
+    errors.Title = 'Enter a valid Title';
+    
+  }
+  
+   else if (!/^[A-Za-z]+/.test(Author)) {
+     isError = true;
+    errors.Author = 'Enter a valid Authors Name';
+    
+  }
+
+  else if (Title) {
+    isError = false;
+    errors.Title = '';
+   
+ }
+  else if (Author) {
+    isError = false;
+    errors.Author = '';
+   
+ }
+    else if (ISBN) {
+     isError = false;
+    errors.ISBN = '';
+    
+  }
+
+    if(isError)
+  setErrors({
+        TitleError:errors.Title, 
+        AuthorError:errors.Author, 
+       ISBNError:errors.ISBN})
+
+  return isError;
+
+
+}
+console.log(errors)
+
+const clearErrors = () =>{
+  setErrors({
+    TitleError:'', 
+    AuthorError:'', 
+   ISBNError:''})
+
+
+}
+////////////////////////
    const dispatch = useDispatch();
    const user = useSelector((state) => state.auth.user)   
-   const  isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
 
 
-   ////Populatng form wih post data to edit 
+
+   ////Populatng form wih post data to edit//////////////
    
-   const post = useSelector((state) =>currentId ? state.records.find((p)=>p._id === currentId) : null);
+const post = useSelector((state) =>currentId ? state.records.find((p)=>p._id === currentId) : null);
+const Post = useSelector((state) =>currentId ? state.UseRecords.find((p)=>p._id === currentId) : null);
+
+
 console.log(post)
 
+const User = JSON.parse(user) 
+
+
+
 useEffect(() => {
- if(post) setFormData(post)
-}, [setFormData,post])
+ if(Post) setFormData(Post)
+}, 
+[setFormData,Post]
+)
 
   
   const submit = (e) => {
    const id= currentId
    e.preventDefault();
+   const error = validatefields()
 
+   if (!error){
+    
    if(currentId){
 
 dispatch(updateBooks(id,formData));
@@ -73,34 +162,20 @@ dispatch(updateBooks(id,formData));
    }
    else{
   dispatch(addBooks(formData));
-
    }
 
    
    clear()
+   clearErrors()
   }
 
+}
 
- 
-  /*const postId = !post?"" :post._id
-     
-     useEffect(() => {
-    if(postId)
-    setFormData({...formData,postId})
-     
-     }, [postId])*///
-   
-
-
-const User = JSON.parse(user) 
- const {Author,Title,ISBN,Review} = formData
 
   return (
-
-    !isAuthenticated ? 
-    <CircularProgress/> :(
-
-      <div className="form-container">
+ 
+      
+        <div className="form-container">
         <div className="header">
        <p>Hey,
 
@@ -121,19 +196,20 @@ const User = JSON.parse(user)
               onDone={({ base64 }) => setFormData({ ...FormData, selectedFile: base64 })} />
               </div>*/}
         
-               <div className="red">
-                 {/* {!errors?"": errors} */}
-                 </div>
+            
+            
                
               <label htmlFor="title">TITLE</label>
               <TextField
                type="text" name="Title"
                value= {Title} 
                onChange={handleChange} 
-               placeholder="Title" 
-             
-              
+               placeholder="Title"    
                /> 
+
+               <div className="red">
+               {errors.TitleError}
+               </div>
        
             </div>
             <div className="form-group">
@@ -143,11 +219,18 @@ const User = JSON.parse(user)
                value= {Author} 
               onChange={handleChange} 
                placeholder="Author" 
-              
-            
+
                /> 
        
+       <div className="red">
+               {errors.AuthorError}
+               </div>
+
             </div>
+
+            <div className="red">
+               {errors.formData}
+                </div> 
             <div className="form-group">
               <label htmlFor="isbn">ISBN NO.</label>
               <TextField
@@ -155,10 +238,13 @@ const User = JSON.parse(user)
                value= {ISBN} 
               onChange={handleChange} 
                placeholder="ISBN" 
-              
-            
+                   
                /> 
-       
+       <div className="red">
+               {errors.ISBNError}
+               </div>
+
+
             </div>
             <div className="form-group">
               <label htmlFor="review">REVIEW</label>
@@ -181,9 +267,12 @@ const User = JSON.parse(user)
   
         </div>
       </div>
+      
+      
+    
  
    )
-  )
+  
 }
 
 

@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../Actions/loginUser';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchAppBar from "../Forms/search"
+
 import TwitterIcon from '@material-ui/icons/Twitter';
 import CallIcon from '@material-ui/icons/Call';
 import MailOutlineIcon  from '@material-ui/icons/MailOutline';
 import "../../style.scss"
+import SearchAppBar from '../Forms/search';
 
 const Navbar = ({auth: { isAuthenticated } }) => {
   const [dmenu, setdmenu] = useState(false);

@@ -1,6 +1,7 @@
-import React from 'react';
+
 import Burger from './Burger';
-import { Link } from 'react-router-dom';
+import Header from './Header';
+
 import Socials from './Socials';
 
 
@@ -13,10 +14,7 @@ export default function Navbar() {
     <div className="Nav-Wrapper">
      <Socials/>
      
-     <Link to='/'
-      className="NavLink1">
-          VITABU
-     </Link>
+<Header/>
 
       
       <Burger />

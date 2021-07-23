@@ -1,12 +1,10 @@
-import {POST_ERROR,SAVE_POST,ACCOUNT_DELETED, CLEAR_PROFILE, UPDATE_POST, GET_POSTS,DELETE_POST, UPDATE_LIKES} from "../Actions/types"
+import {POST_ERROR,UPDATE_POST, GET_POSTS,DELETE_POST, UPDATE_LIKES} from "../Actions/types"
 
 
 
 const bookrecords =  (posts=[], action) => {
   switch (action.type) {
 
-  case SAVE_POST:
- return [...posts, action.payload];
   
    case GET_POSTS:
   return action.payload;

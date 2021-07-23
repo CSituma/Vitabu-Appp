@@ -55,6 +55,24 @@ color:red
     background-color:rgba(255, 255, 0, 0.616);
   }
 }
+.btnnn{
+  border:none;
+  outline:none;
+  padding: 0.5rem 1rem;
+  background-color:white;
+  font-size: 1.2rem;
+   text-align:center;
+   margin:0;
+   position:fixed;
+   bottom:0;
+
+  &:hover{
+    background-color:rgba(255, 255, 0, 0.616);
+  }
+}
+
+
+
 ///NAVBAR///////////
 
 ////Contact us///////
@@ -76,7 +94,7 @@ height:1.8rem;
 .Nav-Wrapper{
 
 background:linear-gradient(rgba(6, 7, 8, 0.92),rgba(0, 0, 0, 0.941)),
-url("./Components//Layout/coverpage2.jpg") center/cover no-repeat;
+url("./Components/Images/coverpage2.jpg") center/cover no-repeat;
 height:4.5rem;
 
 }
@@ -98,7 +116,7 @@ height:4.5rem;
   padding: 1rem;
   cursor: pointer;
    &:active,&:focus{
-    color: cadetblue;
+    color: yellow;
   }
 
   @media screen and (max-width: 700px) {
@@ -111,9 +129,10 @@ height:4.5rem;
  .NavBtnLink{
 
   border-radius: 4px;
-  background:none;
   padding: 10px 22px;
+  color:white;
   border: 2px white solid;
+
  }
 
 
@@ -193,7 +212,7 @@ height:4.5rem;
 
      padding:2em;
    background:linear-gradient(rgba(7, 8, 9, 0.864),rgba(0, 0, 0, 0.809)),
-   url("./Components//Layout/coverpage2.jpg") center/cover no-repeat;
+   url("./Components/Images/coverpage2.jpg") center/cover no-repeat;
    text-align: center;
     height:100vh ;
   h2{
@@ -254,7 +273,7 @@ background: linear-gradient(
         rgba(0, 0, 0, 0.664),
       rgba(0, 0, 0, 0.794)90%
     ),
-    url("./Components/Layout/bun.jpg") center/cover no-repeat;
+    url("./Components/Images/bun.jpg") center/cover no-repeat;
 
 
     .theminis{
@@ -349,6 +368,9 @@ h3{
 
 
 }
+
+}
+
 .ffooter{
   padding: 2rem;
   margin-top: 10em;
@@ -360,7 +382,6 @@ h3{
     flex-direction:column;
   }
 }
-}
 
 ///FORMS//////
 .form-container {
@@ -369,7 +390,7 @@ h3{
   height:400px;
   flex-direction: column;
   align-items: center;
-  margin:2em;
+  margin:1.5em;
 
   .content {
     margin-top: 4em;
@@ -386,7 +407,7 @@ h3{
     .form {
       align-items: center;
 
-      .form-group {
+      .form-group { 
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -442,19 +463,25 @@ h3{
 ///////////////DASHBOARD///////////////////////
 
 .posts{
-   min-height:100vh;
+   min-height:130vh;
    max-width:100%;
    margin: 0;
    background:  linear-gradient(
     60deg,
       rgba(0, 0, 0, 0.664),
     rgba(39, 38, 38, 0.794)90%
-  ),url("./Components/Layout/Dashboard2.jpg") center/cover no-repeat;
+  ),url("./Components/Images/Dashboard2.jpg") center/cover no-repeat;
+
+  
   .NavBtnLink{
 
     background-color: red;
     color:white;
-    float:right;
+    position:absolute;
+    margin-top:10em;
+    right:0;
+   
+
   }
 
 }
@@ -479,22 +506,20 @@ h3{
   }
   }
 
-.display1{
-  margin-top: 4em;
-  display:flex;
-  flex-wrap: wrap;
-
- @media (max-width:900px){
-    flex-direction: column;
-    margin-top:20em;
-   }
 
   }
 
   .display{
     margin-left: 4em;
     display:flex;
-    flex-wrap: wrap;
 }
 
-}
+.display1{
+display:flex;
+flex-wrap: wrap;
+margin:2em 0  0 1em;
+ @media (max-width:900px){
+    flex-direction: column;
+    margin-top:15em;
+   }
+  }

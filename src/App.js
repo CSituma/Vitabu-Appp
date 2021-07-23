@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import Register from "./Components/Forms/Register"
 import Login from "./Components/Forms/Login"
 import About from "./Components/Layout/About"
@@ -8,12 +8,13 @@ import Dashboard from "./Components/Layout/Dashboard"
 import Feed from "./Components/Layout/Feed"
 import {BrowserRouter as Router, Switch,Route} from "react-router-dom";
 import Post from './Components/Forms/Record'
+
 class App extends Component {
   
   render() {
     return (
      
-         <Router>    
+ <Router>    
             <Navbar/> 
              <Switch>
         <Route path='/'exact component={Home}/>     

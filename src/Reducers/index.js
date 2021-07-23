@@ -7,7 +7,7 @@ const allReducers = combineReducers ({
 
  auth:isAuthenticated,
  records: bookrecords,
-currentuser:currentuser,
+UseRecords:currentuser,
 })
 
 export default allReducers;

@@ -4,6 +4,7 @@ import * as S from './style';
 import { Link } from 'react-router-dom';
 import { logout } from '../../../Actions/loginUser';
 
+
 const RightNav = ({open}) => {
 
 const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
@@ -36,7 +37,7 @@ const dispatch = useDispatch()
   const memberLinks = (
     
     <S.Ul open={open}>
-      
+     
           <Link to='/Dashboard' 
             className="NavLink">
             HOME

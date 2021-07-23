@@ -1,4 +1,3 @@
-
 import {createStore, applyMiddleware,compose} from "redux"
 import allReducers from "../Reducers/index"
 import thunk from "redux-thunk"
