@@ -64,7 +64,6 @@ errors:''
     if (this.props.isAuthenticated) {
 
       return <Redirect to="/dashboard" /> 
-      window.location.reload()
       
     }
     
