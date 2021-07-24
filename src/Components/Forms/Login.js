@@ -65,6 +65,7 @@ errors:''
 
       return <Redirect to="/dashboard" /> 
 
+       window. location. reload()
     }
     
   
