@@ -17,25 +17,25 @@ export default function About() {
 <div className="About">
 
 
-   <div className = "theminis">
-<div className="minis" data-aos='fade-up' data-aos-once="false">
+   <div className = "Services-wrapper">
+<div className="box" data-aos='fade-up' data-aos-once="false">
   
-<h2>SUPPORT</h2>
+<h3>SUPPORT</h3>
 <p> We provide 24/7 Support
 </p>
 </div>
 
-<div className="minis" data-aos='fade-up' data-aos-once="false">
+<div className="box" data-aos='fade-up' data-aos-once="false">
   
-<h2>SAFE </h2>
+<h3>SAFE </h3>
 <p> Secure logins and Data Storage</p>
 </div> 
 
-<div className="minis" data-aos='fade-up' data-aos-once="false">
+<div className="box" data-aos='fade-up' data-aos-once="false">
     
-<h2>
+<h3>
   
-  COMMUNITY </h2>
+  COMMUNITY </h3>
 <p> We're building a community of book lovers, </p>
  <p> Providing a place to recommend books and share.
 </p>
