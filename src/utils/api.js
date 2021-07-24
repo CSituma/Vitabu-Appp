@@ -5,6 +5,8 @@ import store from '../store/store';
 const api = axios.create({
   baseURL: 'https://vitabu2.herokuapp.com/api',
   headers: {
+    'Content-Type' : 'application/json',
+    'Accept' : 'application/json',
     'x-auth-token': localStorage.getItem("token")
   }
 });
