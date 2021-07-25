@@ -11,9 +11,8 @@ import { deleteUser, getBooksByUser } from '../../Actions/Records';
 import UserPosts from '../Forms/Userposts';
 import Footer from './Footer';
 import SearchAppBar from '../Forms/search';
-import { logout } from '../../Actions/loginUser';
+import LoginUser, { logout } from '../../Actions/loginUser';
 
-import { login } from '../../Actions/loginUser';
   const Dashboard = () => {
 
 
@@ -78,7 +77,9 @@ import { login } from '../../Actions/loginUser';
  
      
    useEffect(() => {
-     dispatch (login());
+  
+
+    dispatch(LoginUser());
     dispatch(getBooksByUser());
 
      },[currentId,dispatch])

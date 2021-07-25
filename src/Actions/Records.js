@@ -170,12 +170,6 @@ export const removeLike = id => async dispatch => {
 
 
 
-
-
-
-
-
-
 export const clearBooks = () =>{
 
 return({
