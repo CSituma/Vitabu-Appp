@@ -1,7 +1,7 @@
 import {GET_ERRORS, LOG_IN,LOGOUT} from "./types"
 import axios from "axios"
 import jwt_decode from "jwt-decode"
-import api from '../utils/api';
+
 
 const LoginUser = (email,password) => dispatch => {
   const payload = {
@@ -10,7 +10,7 @@ const LoginUser = (email,password) => dispatch => {
     password
    
   }
-  api.post('/login/loginuser',payload)
+  axios.post('https://vitabu2.herokuapp.com/api/login/loginuser',payload)
     .then( res => {
       console.log(res.data)
       const {token} = res.data;

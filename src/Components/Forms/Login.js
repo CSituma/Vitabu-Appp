@@ -62,8 +62,8 @@ errors:''
   render() {
 
     if (this.props.isAuthenticated) {
-
       return <Redirect to="/dashboard" /> 
+  
       
     }
     

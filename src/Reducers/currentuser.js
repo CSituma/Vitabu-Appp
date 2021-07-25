@@ -1,4 +1,4 @@
-import {POST_ERROR,GET_USERS_POSTS,UPDATE_LIKES,DELETE_POST,SAVE_POST,} from "../Actions/types"
+import {POST_ERROR,GET_USERS_POSTS,UPDATE_LIKES,DELETE_POST,SAVE_POST} from "../Actions/types"
 
 
 
@@ -25,8 +25,7 @@ const currentuser =  (posts=[], action) => {
      post._id === action.payload._id ? action.payload : post
     
      );
-   
-
+  
   case POST_ERROR:
     return action.payload;
 

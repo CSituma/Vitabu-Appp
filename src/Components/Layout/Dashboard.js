@@ -4,7 +4,8 @@ import { useDispatch,
   useSelector} from 'react-redux';
 import "../../style.scss";
 import PostForm from '../Forms/postForm';
-import { Button } from '@material-ui/core';
+import { Button,Paper,Typography } from '@material-ui/core';
+import {Link} from "react-router-dom"
 import { ArrowUpward } from '@material-ui/icons';
 import { deleteUser, getBooksByUser } from '../../Actions/Records';
 import UserPosts from '../Forms/Userposts';
@@ -77,8 +78,11 @@ import { logout } from '../../Actions/loginUser';
      
    useEffect(() => {
     dispatch(getBooksByUser());
+
      },[currentId,dispatch])
 
+     
+  
      
 
 
@@ -113,13 +117,21 @@ import { logout } from '../../Actions/loginUser';
 
   return (
    
+!isAuthenticated ? 
+<Paper className = {classes.paper}>
+      <Typography variant = "h6" align="center">
+        
+        Please<Link to ="/Login" className="red">  Sign in</Link> to like and Post Books on the site
+      </Typography>
+     
+      </Paper>
+
+ : (
      <div className="posts">
   <SearchAppBar   search ={search} setSearch={setSearch}   />
     <div className = "Dashboard">
     
      <PostForm formData={formData} setFormData={setFormData} currentId={currentId} clear={clear} />
-
-
 
 
      <div className="display1">
@@ -165,7 +177,7 @@ import { logout } from '../../Actions/loginUser';
         <Footer/>
   </div>
 
-  )
+  ))
 }
 
 
