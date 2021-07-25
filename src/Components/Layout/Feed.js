@@ -113,6 +113,8 @@ import SearchAppBar from '../Forms/search';
       </Paper>
       
       : ''}
+
+      
 <div className="display1">
 {posts.slice(0,visible).filter((post) => {
   

@@ -94,6 +94,8 @@ import { logout } from '../../Actions/loginUser';
    dispatch(deleteUser())
 
    dispatch(logout())
+
+   
   
  };
   
