@@ -16,7 +16,7 @@ function Home({isAuthenticated}) {
       <h2>You need some <span>Shelf </span>control</h2>
      </>
      <>
-       <p>We provide a free library system for the books on your shelf.</p>
+       <h3>We provide a free library system for the books on your shelf.</h3>
   </>
    
   <Link to ="/Login"> <button className="btnn">   Let's Get Started </button>  </Link>
