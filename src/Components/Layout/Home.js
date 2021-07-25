@@ -12,11 +12,9 @@ function Home({isAuthenticated}) {
   return (
     <div className="Homepage">
       <h2>You need some <span>Shelf </span>control</h2>
-      <div>
- <p>We provide a free library system for the books on your shelf.</p>
-      <p className="2">Secure, Limitless storage, Join a Community of Book Keepers.</p>
-      </div>
-
+     
+       <p>We provide a free library system for the books on your shelf.</p>
+      
         <Link to ="/Login"> <button className="btnn">   Let's Get Started </button>  </Link>
         
     </div>

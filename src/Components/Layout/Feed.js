@@ -107,15 +107,13 @@ import SearchAppBar from '../Forms/search';
       <Paper className = {classes.paper}>
       <Typography variant = "h6" align="center">
         
-        Please<Link to ="/Login">  Sign in</Link> to like and Post Books on the site
+        Please<Link to ="/Login" className="red">  Sign in</Link> to like and Post Books on the site
       </Typography>
      
       </Paper>
       
       : ''}
 <div className="display1">
- 
-  
 {posts.slice(0,visible).filter((post) => {
   
   if(search ===''){

@@ -13,7 +13,6 @@ class App extends Component {
   
   render() {
     return (
-     
  <Router>    
             <Navbar/> 
              <Switch>
@@ -28,7 +27,6 @@ class App extends Component {
           </Switch>   
       </Router>
 
-  
     )
   }
 }
