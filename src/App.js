@@ -3,7 +3,7 @@ import Register from "./Components/Forms/Register"
 import Login from "./Components/Forms/Login"
 import About from "./Components/Layout/About"
 import Home from "./Components/Layout/Home"
-import Navbar from "./Components/Layout/Navbar/Navbar"
+import Navbar from "./Components/Layout/Navbar"
 import Dashboard from "./Components/Layout/Dashboard"
 import Feed from "./Components/Layout/Feed"
 import {BrowserRouter as Router, Switch,Route} from "react-router-dom";

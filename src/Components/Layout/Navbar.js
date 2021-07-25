@@ -1,120 +1,76 @@
-import React, { Fragment ,useState} from 'react';
+import React, { Fragment} from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import {useSelector,useDispatch} from "react-redux"
 import { logout } from '../../Actions/loginUser';
-import MenuIcon from '@material-ui/icons/Menu';
-
-import TwitterIcon from '@material-ui/icons/Twitter';
-import CallIcon from '@material-ui/icons/Call';
-import MailOutlineIcon  from '@material-ui/icons/MailOutline';
 import "../../style.scss"
-import SearchAppBar from '../Forms/search';
+import Socials from '../Layout/Navbar/Socials';
+import Header from '../Layout/Navbar/Header';
 
-const Navbar = ({auth: { isAuthenticated } }) => {
-  const [dmenu, setdmenu] = useState(false);
-  const openMenu = () => setdmenu(!dmenu);
-  const closeMenu = () => setdmenu(false);
+const Navbar = () => {
 
+const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+const dispatch = useDispatch()
 
-  const styles = {
-    Icons:{
-      fontSize:"15px",
-      color:"white",
-    },
-    // // FirstIcon:{
-    // //   marginLeft:'6em'
-    // // }
-  }
+  const handleClick = () => {
+    dispatch(logout());
+  };
 
-  const defaultLinks = (
-  <div className ="Nav-Wrapper">
- <div className="social">
-<h2>      
-  <a target="_blank" rel="noreferrer" href="tel:0726056055"> <CallIcon style={styles.Icons}/></a></h2>
-<h2>
-  <a target="_blank" rel= "noreferrer" href="https://twitter.com/vitabu"> <TwitterIcon style={styles.Icons}/></a>
-  </h2>
-<h2>
-        <a target="_blank" rel="noreferrer" href="mailto:vitabuapp@gmail.com"> <MailOutlineIcon style={styles.Icons}/></a>
-</h2>
-      
+const defaultLinks = (
+  <>
+   <Socials/>
+     <div className ="Nav-Wrapper">
+    
+  <Header/>
+   <div className="menu">
+   
+    <Link to='/About'
+        className="NavLink">
+          About
+        </Link>
+        <Link to='/Feed'
+        className="NavLink">
+          Feed
+        </Link>
+       
+        <Link to='/Login'
+        className="NavBtnLink">
+        Sign In
+        </Link>
+   
+  </div>
+           
     </div>
-       <div className="Nav">
-     
-        <Link to='/'
-          className="NavLink1"
-          onClick={closeMenu}>
-         VITABU
-        </Link>
-            <div
-        className="Bars"
-        
-        onClick={openMenu}
-        >
-            <MenuIcon/>
-          </div>
-        <div className ="NavMenu">
-          <Link to='/About'
-          className="NavLink">
-            About
-          </Link>
-          
-          <Link to='/Login'
-          className="NavBtnLink">
-            Sign In
-          </Link>
-        
-        </div>
-        
-      </div>
-      </div>
-  );
-  
+    </>
+  )
+
   const memberLinks = (
+    <>
+       <Socials/>
+  <div className ="Nav-Wrapper">
+  
+     <Header/>
 
-   <div className="Nav">
-
-        <Link to='/'
-          className="NavLink1"
-          onClick={closeMenu}>
-         VITABU
-        </Link>
-
-            <div
-        className="Bars"
-        
-        onClick={openMenu}
-        >
-           <MenuIcon/>
-            
-          </div>
-          <SearchAppBar/>
-        <div className ="NavMenu">
-
-          <Link to='/Dashboard' 
-            className="NavLink" >
+     <div className="menu">
+     
+      <Link to='/Dashboard' 
+            className="NavLink">
             HOME
           </Link>
           <Link to='/Feed'
           className="NavLink">
-            FEED
+            Feed
           </Link>
           <Link to='/Login'
-
-          onClick={logout}
+          onClick={handleClick}
           className="NavBtnLink">
           LOGOUT
           </Link>
-        
-        </div>
-        
-      </div>
+     </div>
+         
+    </div>
+    </>
+  )
 
-    
-  );
-
-  
 
   return (
        <Fragment>
@@ -124,13 +80,5 @@ const Navbar = ({auth: { isAuthenticated } }) => {
   );
 };
 
-Navbar.propTypes = {
-  logout: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
-};
 
-const mapStateToProps = (state) => ({
-  auth: state.auth
-});
-
-export default connect(mapStateToProps, { logout })(Navbar);
+export default Navbar;

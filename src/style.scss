@@ -98,10 +98,10 @@ height:1.8rem;
 }
 }
 .Nav-Wrapper{
-
+display:flex;
 background:linear-gradient(rgba(6, 7, 8, 0.92),rgba(0, 0, 0, 0.941)),
 url("./Components/Images/coverpage2.jpg") center/cover no-repeat;
-height:4.5rem;
+height:3.5rem;
 }
 
 .NavLink1 {
@@ -112,8 +112,12 @@ height:4.5rem;
   letter-spacing: 1rem;
   align-self: start;
 
+  @media screen and (max-width: 700px) {
+   font-size:0.8rem;
+  letter-spacing: 0.6rem;
+ 
 
-
+  }
   }
 .NavLink {
   color: white;
@@ -127,7 +131,7 @@ height:4.5rem;
   }
 
   @media screen and (max-width: 700px) {
-    margin-bottom:2em;
+    
 
   }
 
@@ -140,79 +144,44 @@ height:4.5rem;
   color:white;
   border: 2px white solid;
 
+
+ @media screen and (max-width: 700px) {
+    //////
+   padding:5px 11px;
+  }
+
  }
 
 
 
 
-//  .Nav .NavMenu {
-//   display: flex;
-//   align-items: center;
-//   margin-right: -24px;
-//   @media screen and (max-width: 700px) {
-
-//      flex-direction:column;
-//       margin-top:3em;
-//       text-align:center;
-//      height:100vh;
-//      padding:2em;
-//      z-index:20;
-//      background-color:black;
-//      visibility: hidden;
-//      transition: all 0.5s ease;
-
-//   }
-//  }
-
-
-
-
-
-/////HAMBURGER MENU///
-// @media screen and (max-width: 700px) {
-
-//   .Nav .checkbox:checked ~.NavMenu {
-//     visibility: visible;
-//   }
-// }
-
-
-
-
-/**/
-/*NavMenu{/
-   margin-top: 6em;
-  position: absolute;
+ .menu{
+  display: flex;
   align-items: center;
-  justify-content: center;
-  align-items: center;
-  top: 20;
-  left: 0;
-  background-color: rgba(8, 8, 8, 0);
-  width: 100%;
-  z-index: 12;
-  height: 100%;
-  overflow: hidden;
- visibility: hidden;
+  margin-left:50rem;
 
+  @media screen and (max-width: 700px) {
+    //////
+  margin-left:0rem;
+
+
+  }
+ }
+
+
+
+
+
+///HAMBURGER MENU///
+@media screen and (max-width: 700px) {
+
+  .Nav .checkbox:checked ~.NavMenu {
+    visibility: visible;
+  }
 }
-*/
 
 
-///////////
-  // .Bars{
-  //   display: none;
-  //   color: #fff;
-  //   @media screen and (max-width: 700px) {
-  //     display: block;
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     transform: translate(-100%, 75%);
-  //     font-size: 1.8rem;
-  //     cursor: pointer;
-  //   }
-  // }
+
 
 ///////HOME///////////////////////
 .Homepage{
@@ -239,7 +208,8 @@ height:4.5rem;
 h3{
   line-height: 1.2rem;
   font-size: 1em;
-  opacity:80%;
+  opacity:70%;
+  font-family:san-serif;
 }
    .btnn{
      margin-top: 3rem;
