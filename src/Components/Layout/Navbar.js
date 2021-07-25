@@ -54,7 +54,7 @@ const defaultLinks = (
      
       <Link to='/Dashboard' 
             className="NavLink">
-            HOME
+            Home
           </Link>
           <Link to='/Feed'
           className="NavLink">
@@ -63,7 +63,7 @@ const defaultLinks = (
           <Link to='/Login'
           onClick={handleClick}
           className="NavBtnLink">
-          LOGOUT
+          Logout
           </Link>
      </div>
          

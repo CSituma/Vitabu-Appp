@@ -114,14 +114,14 @@ import { logout } from '../../Actions/loginUser';
   return (
    
      <div className="posts">
-  <SearchAppBar   search ={search} setSearch={setSearch}   />
+
     <div className = "Dashboard">
     
      <PostForm formData={formData} setFormData={setFormData} currentId={currentId} clear={clear} />
 
 
 
-
+  <SearchAppBar   search ={search} setSearch={setSearch}   />
      <div className="display1">
  
   
