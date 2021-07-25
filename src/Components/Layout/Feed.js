@@ -72,7 +72,7 @@ import SearchAppBar from '../Forms/search';
    const  posts = useSelector((state) => state.records)
 
 
-   const [visible, setVisible] = useState(4);
+   const [visible, setVisible] = useState(3);
   
  const showMore =() =>{
 
@@ -123,7 +123,7 @@ import SearchAppBar from '../Forms/search';
     return post
    }
 
- else if  (post.Title.toLowerCase().includes(search.toLowerCase())) {
+  else if  ((post.Title.toLowerCase().includes(search.toLowerCase())) ||(post.Author.toLowerCase().includes(search.toLowerCase()))) {
 
   return post
   }  

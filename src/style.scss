@@ -101,12 +101,14 @@ height:1.8rem;
 display:flex;
 background:linear-gradient(rgba(6, 7, 8, 0.92),rgba(0, 0, 0, 0.941)),
 url("./Components/Images/coverpage2.jpg") center/cover no-repeat;
-height:3.5rem;
+height:2.5rem;
+
 }
 
 .NavLink1 {
 
   align-items: center;
+  margin-top:0rem;
   padding: 1rem;
   text-shadow: 1px 1px white;
   letter-spacing: 1rem;
@@ -122,6 +124,7 @@ height:3.5rem;
 .NavLink {
   color: white;
   display: flex;
+  margin-top:0;
   align-items: center;
   text-decoration: none;
   padding: 1rem;
@@ -142,7 +145,7 @@ height:3.5rem;
   border-radius: 4px;
   padding: 10px 22px;
   color:white;
-  border: 2px white solid;
+  border: 0.5px  solid white;
 
 
  @media screen and (max-width: 700px) {
@@ -208,8 +211,7 @@ height:3.5rem;
 h3{
   line-height: 1.2rem;
   font-size: 1em;
-  opacity:70%;
-  font-family:san-serif;
+  opacity:80%
 }
    .btnn{
      margin-top: 3rem;

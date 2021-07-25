@@ -50,7 +50,7 @@ const User = JSON.parse(user);
 
         <CardContent>
           <Typography gutterBottom variant="h6" component="h4">
-           By: {!post? "Author" : post.Author}
+           Author: {!post? "Author" : post.Author}
           </Typography>
         
           <Typography variant="body2" color="textSecondary" className={classes.bodypost}

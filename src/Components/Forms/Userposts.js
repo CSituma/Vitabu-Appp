@@ -80,7 +80,7 @@ setCurrentId(post._id);
 
         <CardContent>
           <Typography gutterBottom variant="h6" component="h4">
-           By: {!post? "Author" : post.Author}
+           Author: {!post? "Author" : post.Author}
           </Typography>
           <Typography gutterBottom variant="h6" component="h4">
           {!isAuthenticated? '' :   (
