@@ -13,6 +13,7 @@ import Footer from './Footer';
 import SearchAppBar from '../Forms/search';
 import { logout } from '../../Actions/loginUser';
 
+import { login } from '../../Actions/loginUser';
   const Dashboard = () => {
 
 
@@ -77,6 +78,7 @@ import { logout } from '../../Actions/loginUser';
  
      
    useEffect(() => {
+     dispatch (login());
     dispatch(getBooksByUser());
 
      },[currentId,dispatch])
