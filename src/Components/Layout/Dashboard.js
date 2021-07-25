@@ -11,7 +11,7 @@ import { deleteUser, getBooksByUser } from '../../Actions/Records';
 import UserPosts from '../Forms/Userposts';
 import Footer from './Footer';
 import SearchAppBar from '../Forms/search';
-import LoginUser, { logout } from '../../Actions/loginUser';
+import { logout } from '../../Actions/loginUser';
 
   const Dashboard = () => {
 
@@ -77,9 +77,7 @@ import LoginUser, { logout } from '../../Actions/loginUser';
  
      
    useEffect(() => {
-  
-
-    dispatch(LoginUser());
+    localStorage.getItem('token');
     dispatch(getBooksByUser());
 
      },[currentId,dispatch])
