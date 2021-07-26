@@ -1,4 +1,4 @@
-import {GET_ERRORS, LOG_IN,LOGOUT} from "./types"
+import {GET_ERRORS, LOG_IN,LOGOUT,CLEAR_PROFILE} from "./types"
 import axios from "axios"
 import jwt_decode from "jwt-decode"
 
@@ -89,9 +89,12 @@ export const logout = () =>dispatch =>{
     localStorage.removeItem('token');
     localStorage.removeItem('userss');
    
-
        dispatch({
        type: LOGOUT
+      })
+   
+       dispatch({
+       type:CLEAR_PROFILE
       })
     }
 

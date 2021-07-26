@@ -145,16 +145,16 @@ letter-spacing: 0.3rem;
  .NavBtnLink{
 
   border-radius: 4px;
-  padding: 10px 22px;
+  padding: 10px 20px;
   color:white;
-  border: 1px solid white;
+  border: 2px solid white;
   text-shadow: 0.6px 0.6px white;
-   letter-spacing: 0.6rem;
+   letter-spacing: 0.5rem;
 
 
  @media screen and (max-width: 700px) {
     //////
-   padding:5px 10px;
+   padding:5px 8px;
   font-size:0.6rem;
   letter-spacing: 0.3rem;
   }
@@ -217,7 +217,7 @@ letter-spacing: 0.3rem;
 
 h3{
   line-height: 1.2rem;
-      font-size: 0.9rem;
+      font-size:1rem;
  
 }
    .btnn{

@@ -117,7 +117,7 @@ import { logout } from '../../Actions/loginUser';
 <Paper className = {classes.paper}>
       <Typography variant = "h6" align="center">
         
-        Please<Link to ="/Login" className="red">  Sign in</Link> to like and Post Books on the site.
+          Welcome
       </Typography>
      
       </Paper>

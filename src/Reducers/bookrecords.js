@@ -1,12 +1,12 @@
-import {POST_ERROR,UPDATE_POST, GET_POSTS,DELETE_POST, UPDATE_LIKES} from "../Actions/types"
+import {POST_ERROR,UPDATE_POST, GET_POSTS,DELETE_POST, UPDATE_LIKES, CLEAR_PROFILE} from "../Actions/types"
 
 
 
 const bookrecords =  (posts=[], action) => {
   switch (action.type) {
 
-  
-   case GET_POSTS:
+  case GET_POSTS:
+    
   return action.payload;
 
   case UPDATE_POST:
@@ -16,12 +16,16 @@ const bookrecords =  (posts=[], action) => {
   post._id === action.payload._id ? action.payload : post
  
   );
+
   case DELETE_POST:
 
  return  posts.filter((post) => 
 
   post._id !== action.payload);
 
+  case CLEAR_PROFILE:
+
+ return  [];
 
   case UPDATE_LIKES:
 
@@ -31,12 +35,11 @@ const bookrecords =  (posts=[], action) => {
  
   );
 
-
   case POST_ERROR:
     return action.payload;
 
   default:
-    return posts
+ return posts
   }
 }
 export default bookrecords
