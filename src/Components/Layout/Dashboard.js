@@ -75,7 +75,7 @@ import { logout } from '../../Actions/loginUser';
   
    useEffect(() => {
    if(!isAuthenticated){
-    localStorage.getItem('token');
+   localStorage.getItem('token');
 
     }
     dispatch(getBooksByUser())
