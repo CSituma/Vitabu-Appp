@@ -73,14 +73,14 @@ import { logout } from '../../Actions/loginUser';
    setVisible(visible + 4);
   }
   
-
- 
-     
    useEffect(() => {
+   if(!isAuthenticated){
     localStorage.getItem('token');
-    dispatch(getBooksByUser());
 
-     },[currentId,dispatch])
+    }
+    dispatch(getBooksByUser())
+
+     },[currentId,dispatch,isAuthenticated])
 
      
   
