@@ -74,16 +74,12 @@ import { logout } from '../../Actions/loginUser';
   }
   
    useEffect(() => {
-   window.location.reload();
+  
     dispatch(getBooksByUser())
 
      },[currentId,dispatch,isAuthenticated])
 
-     useEffect(() => {
-   window.location.reload();
     
-  },[])
-  
      
 
 
