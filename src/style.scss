@@ -161,11 +161,12 @@ height:2.5rem;
   display: flex;
   align-items: center;
   margin-left:50rem;
-
+  text-transform:uppercase;
+   
   @media screen and (max-width: 700px) {
     //////
   margin-left:0rem;
-
+text-transform:lowercase;
 
   }
  }
