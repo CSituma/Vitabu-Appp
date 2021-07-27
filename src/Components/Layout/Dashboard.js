@@ -4,8 +4,7 @@ import { useDispatch,
   useSelector} from 'react-redux';
 import "../../style.scss";
 import PostForm from '../Forms/postForm';
-import { Button,Paper,Typography } from '@material-ui/core';
-import {Link} from "react-router-dom"
+import { Button,CircularProgress} from '@material-ui/core';
 import { ArrowUpward } from '@material-ui/icons';
 import { deleteUser, getBooksByUser } from '../../Actions/Records';
 import UserPosts from '../Forms/Userposts';
@@ -114,13 +113,7 @@ import { logout } from '../../Actions/loginUser';
   return (
    
 !isAuthenticated ? 
-<Paper className = {classes.paper}>
-      <Typography variant = "h6" align="center">
-        
-          Welcome
-      </Typography>
-     
-      </Paper>
+<CircularProgress/>
 
  : (
      <div className="posts">
