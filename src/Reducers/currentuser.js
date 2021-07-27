@@ -9,7 +9,7 @@ const currentuser =  (posts=[], action) => {
   return [...posts, action.payload];
 
    case GET_USERS_POSTS:
-  return [...posts, isAuthenticated:true,action.payload];
+  return action.payload;
 
   case DELETE_POST:
 
