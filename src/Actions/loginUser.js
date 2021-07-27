@@ -88,6 +88,7 @@ export const logout = () =>dispatch =>{
    delete axios.defaults.headers.common['x-auth-token'];
     localStorage.removeItem('token');
     localStorage.removeItem('userss');
+cache.reset()
 
        dispatch({
        type: LOGOUT
