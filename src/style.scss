@@ -109,7 +109,7 @@ height:2.5rem;
   align-items: center;
   margin-top:0rem;
   padding: 1rem;
-  
+  text-shadow: 1px 1px white;
   letter-spacing: 1rem;
   align-self: start;
 
@@ -127,6 +127,7 @@ height:2.5rem;
   align-items: center;
   text-decoration: none;
   padding: 1rem;
+  text-shadow: 0.6px 0.6px white;
   letter-spacing: 0.3rem;
   cursor: pointer;
    &:active,&:focus{
@@ -136,6 +137,7 @@ height:2.5rem;
   @media screen and (max-width: 700px) {
     
 font-size:0.6rem;
+
   }
 
 
