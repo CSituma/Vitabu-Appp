@@ -74,9 +74,8 @@ import { logout } from '../../Actions/loginUser';
   }
   
    useEffect(() => {
-
-    If(!isAuthenticated){
-    window.location.reload();
+ if(!isAuthenticated){
+   localStorage.getItem('token');
    }dispatch(getBooksByUser());
 
    },[currentId,dispatch,isAuthenticated])
