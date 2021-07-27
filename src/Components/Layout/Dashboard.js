@@ -79,7 +79,10 @@ import { logout } from '../../Actions/loginUser';
 
      },[currentId,dispatch,isAuthenticated])
 
-     
+     useEffect(() => {
+   window.location.reload();
+    
+  },[])
   
      
 
