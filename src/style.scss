@@ -128,7 +128,7 @@ height:2.5rem;
   text-decoration: none;
   padding: 1rem;
   text-shadow: 0.6px 0.6px white;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.6rem;
   cursor: pointer;
    &:active,&:focus{
     color: yellow;
@@ -137,6 +137,7 @@ height:2.5rem;
  @media screen and (max-width: 700px) {
     
 font-size:0.6rem;
+letter-spacing: 0.3rem;
 
   }
 }
@@ -148,12 +149,14 @@ font-size:0.6rem;
   color:white;
   border: 1px solid white;
   text-shadow: 0.6px 0.6px white;
+   letter-spacing: 0.6rem;
 
 
  @media screen and (max-width: 700px) {
     //////
    padding:6px 12px;
   font-size:0.6rem;
+  letter-spacing: 0.3rem;
   }
 
  }
