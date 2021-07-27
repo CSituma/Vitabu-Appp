@@ -34,7 +34,7 @@ const defaultLinks = (
        
         <Link to='/Login'
         className="NavBtnLink">
-        Sign In
+        LOGIN
         </Link>
    
   </div>
