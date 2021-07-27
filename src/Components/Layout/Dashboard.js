@@ -75,16 +75,13 @@ import { logout } from '../../Actions/loginUser';
   
    useEffect(() => {
 
-If(!isAuthenticated){
-window.location.reload()}
-  
-    dispatch(getBooksByUser())
+    If(!isAuthenticated){
+    window.location.reload();
+   }dispatch(getBooksByUser());
 
-     },[currentId,dispatch,isAuthenticated])
+   },[currentId,dispatch,isAuthenticated])
 
     
-     
-
 
    const clear = () => {
    
@@ -121,7 +118,7 @@ window.location.reload()}
 <Paper className = {classes.paper}>
       <Typography variant = "h6" align="center">
         
-        Please<Link to ="/Login" className="red">  Sign in</Link> to like and Post Books on the site
+        Please<Link to ="/Login" className="red">  Sign in</Link> to like and Post Books on the site.
       </Typography>
      
       </Paper>
