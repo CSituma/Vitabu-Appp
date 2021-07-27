@@ -74,10 +74,7 @@ import { logout } from '../../Actions/loginUser';
   }
   
    useEffect(() => {
-   if(!isAuthenticated){
    window.location.reload();
-
-    }
     dispatch(getBooksByUser())
 
      },[currentId,dispatch,isAuthenticated])
