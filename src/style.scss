@@ -101,21 +101,26 @@ display:flex;
 background:linear-gradient(rgba(6, 7, 8, 0.92),rgba(0, 0, 0, 0.941)),
 url("./Components/Images/coverpage2.jpg") center/cover no-repeat;
 height:2.5rem;
+max-width:100%;
 
 }
 
 .NavLink1 {
 
   align-items: center;
-  margin-top:0rem;
   padding: 1rem;
   text-shadow: 1px 1px white;
   letter-spacing: 1rem;
   align-self: start;
 
-  @media screen and (max-width: 700px) {
-   font-size:0.8rem;
+  @media screen and (max-width: 662px) {
+   font-size:0.9rem;
   letter-spacing: 0.6rem;
+
+  } 
+  @media screen and (max-width: 450px) {
+   font-size:0.7rem;
+  letter-spacing: 0rem;
  text-shadow: 0.8px 0.8px white;
 
   } }
@@ -123,7 +128,6 @@ height:2.5rem;
 .NavLink {
   color: white;
   display: flex;
-  margin-top:0;
   align-items: center;
   text-decoration: none;
   padding: 1rem;
@@ -134,10 +138,22 @@ height:2.5rem;
     color: yellow;
   }
 
- @media screen and (max-width: 700px) {
+//  @media screen and (max-width: 662px) {
+    
+// font-size:0.6rem;
+// letter-spacing: 0.3rem;
+
+//   }
+ @media screen and (max-width: 620px) {
+    
+font-size:0.9rem;
+letter-spacing: 0.3rem;
+
+  }
+ @media screen and (max-width: 520px) {
     
 font-size:0.6rem;
-letter-spacing: 0.3rem;
+
 
   }
 }
@@ -152,11 +168,22 @@ letter-spacing: 0.3rem;
    letter-spacing: 0.5rem;
 
 
- @media screen and (max-width: 700px) {
+//  @media screen and (max-width: 662px) {
+//     //////
+//    padding:5px 8px;
+//   font-size:0.6rem;
+//   letter-spacing: 0.3rem;
+//   }
+ @media screen and (max-width: 620px) {
     //////
    padding:5px 8px;
-  font-size:0.6rem;
+  font-size:0.9rem;
   letter-spacing: 0.3rem;
+  }
+ @media screen and (max-width: 520px) {
+
+  font-size:0.6rem;
+ 
   }
 
  }
@@ -167,10 +194,28 @@ letter-spacing: 0.3rem;
  .menu{
   display: flex;
   align-items: center;
-  margin-left:50rem;
+  margin-left:40rem;
   text-transform:uppercase;
    
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 1200px) {
+    //////
+  margin-left:25rem;
+
+
+  }
+  @media screen and (max-width: 1000px) {
+    //////
+  margin-left:15rem;
+
+
+  }
+  @media screen and (max-width: 800px) {
+    //////
+  margin-left:5rem;
+
+
+  }
+  @media screen and (max-width: 450px) {
     //////
   margin-left:0rem;
 
