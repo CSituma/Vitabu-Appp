@@ -162,7 +162,7 @@ import { logout } from '../../Actions/loginUser';
     </button>
   </div> 
   
-        {(isAuthenticated)&&( <button className="NavBtnLink" onClick = {deleteAccount}>DELETE ACCOUNT </button>)}
+    
         <Footer/>
   </div>
 
