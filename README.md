@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# Getting Started with VITABU-APP
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Cloning the project
+
+On the CLI,run:
+
+### `git clone https://github.com/CSituma/Vitabu-Appp.git`
+
+After that's done, run:
+
+### `git clone https://github.com/CSituma/Vitabu-Appp.git`
+
+to install dependencies.
 
 ## Available Scripts
 
