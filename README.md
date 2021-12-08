@@ -10,7 +10,7 @@ On the CLI,run:
 
 After that's done, run:
 
-### `git clone https://github.com/CSituma/Vitabu-Appp.git`
+### `npm i`
 
 to install dependencies.
 
