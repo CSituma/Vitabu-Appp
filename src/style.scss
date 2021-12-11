@@ -118,8 +118,7 @@ max-width:100%;
   letter-spacing: 0.6rem;
 
   } 
-  @media screen and (max-width: 450px) {
-   font-size:0.7rem;
+  @media screen and (max-width: 450px) {  
   letter-spacing: 0rem;
  text-shadow: 0.8px 0.8px white;
 
@@ -146,16 +145,11 @@ max-width:100%;
 //   }
  @media screen and (max-width: 620px) {
     
-font-size:0.9rem;
+font-size:1rem;
 letter-spacing: 0.3rem;
 
   }
- @media screen and (max-width: 520px) {
-    
-font-size:0.6rem;
-
-
-  }
+ 
 }
 
  .NavBtnLink{
@@ -180,15 +174,8 @@ font-size:0.6rem;
   font-size:0.9rem;
   letter-spacing: 0.3rem;
   }
- @media screen and (max-width: 520px) {
-
-  font-size:0.6rem;
- 
-  }
 
  }
-
-
 
 
  .menu{
@@ -238,7 +225,7 @@ font-size:0.6rem;
 
 
 
-///////HOME///////////////////////
+///////HOME////////////
 .Homepage{
   padding:2em;
    background:linear-gradient(rgba(7, 8, 9, 0.864),rgba(0, 0, 0, 0.809)),
@@ -263,6 +250,9 @@ font-size:0.6rem;
 h3{
   line-height: 1.2rem;
       font-size:1rem;
+      margin-top:2em;
+      text-transform: lowercase;
+      color:rgba(255, 255, 255, 0.795);
  
 }
    .btnn{

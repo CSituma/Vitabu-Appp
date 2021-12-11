@@ -4,7 +4,7 @@ import { useDispatch,
   useSelector} from 'react-redux';
 import "../../style.scss";
 import Post from "../Forms/Record"
-import { Button,Paper,Typography } from '@material-ui/core';
+import { Button,Paper,Typography,CircularProgress} from '@material-ui/core';
 import { ArrowUpward } from '@material-ui/icons';
 import { getBooks } from '../../Actions/Records';
 import Footer from './Footer';
@@ -98,12 +98,13 @@ import SearchAppBar from '../Forms/search';
  }
 
   return (
-      
+
    
      <div className="posts">
 <SearchAppBar search ={search} setSearch={setSearch}/>
     <div className = "Dashboard">
-  {!isAuthenticated ? 
+
+{!isAuthenticated ? 
       <Paper className = {classes.paper}>
       <Typography variant = "h6" align="center">
         
@@ -116,7 +117,12 @@ import SearchAppBar from '../Forms/search';
 
       
 <div className="display1">
-{posts.slice(0,visible).filter((post) => {
+
+{!posts? 
+<CircularProgress/>
+
+ : 
+ posts.slice(0,visible).filter((post) => {
   
   if(search ===''){
 
@@ -157,7 +163,7 @@ import SearchAppBar from '../Forms/search';
   </div>
       
    
-  )
+    )
 }
 
 

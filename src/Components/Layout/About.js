@@ -43,12 +43,12 @@ export default function About() {
 </div>
 
 
-<div className = "intro" data-aos='fade-in' >
+<div className = "intro" data-aos='fade-in'  data-aos-once="false" >
 <h2>WHO <span className="white">WE</span> ARE</h2>
-    <p>Vitabu means books in swahili.</p>
-     <p>We provide an inventory and storage for the books on your shelf. </p>
-   <p> Your whole library, in your hands. </p>
-   <p>Rate,Review and Like A range of Books</p>
+    <p data-aos='fade-in'  data-aos-once="false">Vitabu means books in swahili.</p>
+     <p data-aos='fade-in' data-aos-once="false">We provide an inventory and storage for the books on your shelf. </p>
+   <p data-aos='fade-in'  data-aos-once="false"> Your whole library, in your hands. </p>
+   <p data-aos='fade-in'  data-aos-once="false">Rate,Review and Like A range of Books</p>
    <h1 className="gold" data-aos='fade-right' data-aos-offset="200"
     data-aos-delay="50"
     data-aos-duration="1000"

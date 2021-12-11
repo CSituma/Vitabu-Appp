@@ -10,7 +10,7 @@ export const StyledBurger = styled.div<INav>`
   width: 2rem;                                                                
   height: 1.5rem;
   position: fixed;
-  top: 30px;
+  top:45px;
   right: 20px;
   z-index: 20;
   display: none;
@@ -60,15 +60,14 @@ export const Ul = styled.ul<INav>`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
-  position: absolute;
   width: 90%;
   top: 0;
   justify-content: flex-end;
-  margin-top: 0px;
+  margin-top:2rem;
   align-items: center;
-  font-size: 18px;
+  font-size:1rem;
   height: 110px;
-  margin-left: 20px;
+  margin-left:0px;
 
   a {
     cursor: pointer;
@@ -93,7 +92,7 @@ export const Ul = styled.ul<INav>`
     top: -16px;
     right: 0;
     height: 100%;
-    width: 180px;
+    width: 180px;  
     padding-top: 9.5rem;
     transition: transform 0.3s ease-in-out;
     z-index: 9;

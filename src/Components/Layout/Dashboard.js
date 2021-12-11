@@ -6,7 +6,7 @@ import "../../style.scss";
 import PostForm from '../Forms/postForm';
 import { Button,CircularProgress} from '@material-ui/core';
 import { ArrowUpward } from '@material-ui/icons';
-import { deleteUser, getBooksByUser } from '../../Actions/Records';
+import {  getBooksByUser } from '../../Actions/Records';
 import UserPosts from '../Forms/Userposts';
 import Footer from './Footer';
 import SearchAppBar from '../Forms/search';
@@ -88,15 +88,15 @@ import { logout } from '../../Actions/loginUser';
    //  errors = '';
   
  };
-   const deleteAccount = () => {
+//    const deleteAccount = () => {
    
-   dispatch(deleteUser())
+//    dispatch(deleteUser())
 
-   dispatch(logout())
+//    dispatch(logout())
 
    
   
- };
+//  };
   
 
 
