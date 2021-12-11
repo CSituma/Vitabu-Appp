@@ -4,7 +4,7 @@ import LoginImg from "../Images/register.png"
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt"
 import ThumbUpAltOutlined from "@material-ui/icons/ThumbUpAltOutlined"
 import DeleteIcon from "@material-ui/icons/Delete"
-import MoreVertIcon from "@material-ui/icons/MoreVert"
+//import MoreVertIcon from "@material-ui/icons/MoreVert"
 import {Typography,Button,Card,CardMedia,CardContent
   ,CardActions, CardActionArea,CardHeader,
  Avatar,} from '@material-ui/core/';
@@ -46,21 +46,24 @@ const  isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
         }
         action = {
         <div>
-  <Typography variant="body2" color="textSecondary" className={classes.bodypost}
-           component="h5">
-     Edit
-          </Typography>
+  
  {!isAuthenticated? '' :   (
 
 (User.id === post.Creator) && (
    
-  <MoreVertIcon  disabled={!user} aria-label="recipe"  onClick = {() => {
+  <Typography variant="body2" color="textSecondary" className={classes.bodypost}
+           component="h5"
+           
+           disabled={!user} aria-label="recipe"  onClick = {() => {
    
-  top();
-      
-setCurrentId(post._id);
-} 
- } />
+            top();
+                
+          setCurrentId(post._id);
+          } 
+           } 
+           >
+     Edit
+          </Typography>
  
 )  
 
